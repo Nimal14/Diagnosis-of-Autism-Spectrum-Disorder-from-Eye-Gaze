@@ -27,12 +27,6 @@ The CNN model consists of multiple convolutional and pooling layers followed by 
 
 **Output Layer**: A single neuron with sigmoid activation for binary classification.
 
-**Dependencies**
-
-Install required Python libraries using:
-
-pip install tensorflow numpy pandas matplotlib scikit-learn
-
 **Training and Evaluation**
 
 The model is trained using Adam optimizer with binary cross-entropy loss.
@@ -75,21 +69,13 @@ history = model.fit(
 test_loss, test_accuracy = model.evaluate(test_generator)
 print(f"Test Accuracy: {test_accuracy * 100:.2f}%")
 
-**Saving the Model**
-
-model.save('enhanced_autism_binary_model_no_aug.h5')
-
 **Visualizing Predictions**
 
-To visualize the first 10 test images along with their true and predicted labels:
-
-visualize_predictions(test_generator, test_y_true, test_y_pred, num_images=10)
+To visualize the first 10 test images along with their true and predicted labels.
 
 **Results**
 
-The classification report and confusion matrix provide insight into model performance:
-
-print(classification_report(test_y_true, test_y_pred, target_names=list(test_generator.class_indices.keys())))
+The classification report and confusion matrix provide insight into model performance.
 
 **Conclusion**
 
