@@ -51,32 +51,6 @@ F1-Score
 
 Confusion Matrix
 
-**Model Training**
-
-To train the model, run:
-
-history = model.fit(
-    train_generator,
-    validation_data=val_generator,
-    epochs=30,
-    steps_per_epoch=train_generator.samples // train_generator.batch_size,
-    validation_steps=val_generator.samples // val_generator.batch_size,
-    callbacks=[lr_reduction]
-)
-
-**Model Evaluation**
-
-test_loss, test_accuracy = model.evaluate(test_generator)
-print(f"Test Accuracy: {test_accuracy * 100:.2f}%")
-
-**Visualizing Predictions**
-
-To visualize the first 10 test images along with their true and predicted labels.
-
-**Results**
-
-The classification report and confusion matrix provide insight into model performance.
-
 **Conclusion**
 
 This project successfully implements a CNN-based model for autism classification with promising accuracy. Future improvements can include data augmentation, hyperparameter tuning, and transfer learning to enhance performance.
