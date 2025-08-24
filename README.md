@@ -1,56 +1,52 @@
-# Diagnosis-of-Autism-Spectrum-Disorder-from-Eye-Gaze
-**Overview**
+## **Overview**  
+This project implements a **Convolutional Neural Network (CNN)** for binary classification to detect autism traits based on image data.  
+- **Frameworks Used:** TensorFlow/Keras for model building, ImageDataGenerator for preprocessing  
+- **Dataset Split:** Training, Validation, and Test sets  
 
-This project implements a Convolutional Neural Network (CNN) for binary classification to detect autism traits based on image data. It uses TensorFlow/Keras for model building and ImageDataGenerator for data preprocessing. The dataset is split into training, validation, and test sets.
+---
 
-**Dataset**
+## **Dataset**  
+- **Training Set:** `/content/DATASET_PRJ/train`  
+- **Test Set:** `/content/DATASET_PRJ/test`  
+- **Preprocessing:** Images resized to **224×224 pixels** before feeding into the model  
 
-**Train Dataset**: /content/DATASET_PRJ/train
+---
 
-**Test Dataset**: /content/DATASET_PRJ/test
+## **Model Architecture**  
+The CNN model is designed with convolutional, pooling, and fully connected layers:  
 
-Images are resized to 224x224 pixels before feeding into the model.
+- **Convolutional Layers:** 4 Conv2D layers with ReLU activation + Batch Normalization  
+- **Pooling Layers:** MaxPooling2D for dimensionality reduction  
+- **Dropout Layers:** Added to prevent overfitting  
+- **Global Average Pooling:** Reduces feature map dimensions  
+- **Dense Layers:** Fully connected layers with ReLU activation  
+- **Output Layer:** Single neuron with **Sigmoid activation** (binary classification)  
 
-**Model Architecture**
+---
 
-The CNN model consists of multiple convolutional and pooling layers followed by fully connected layers:
+## **Training & Evaluation**  
+- **Optimizer:** Adam  
+- **Loss Function:** Binary Cross-Entropy  
+- **Learning Rate Adjustment:** ReduceLROnPlateau  
+- **Visualization:** Training/Validation accuracy & loss curves  
 
-**Convolutional Layers**: 4 Conv2D layers with ReLU activation and Batch Normalization.
+---
 
-**Pooling Layers**: MaxPooling2D layers for dimensionality reduction.
+## **Key Metrics**  
+The model evaluates performance using:  
+- **Accuracy**  
+- **Precision**  
+- **Recall (Sensitivity)**  
+- **Specificity**  
+- **F1-Score**  
+- **Confusion Matrix**  
 
-**Dropout Layers**: Used to prevent overfitting.
+---
 
-**Global Average Pooling**: Reduces feature map dimensions.
+## **Conclusion**  
+This project successfully implements a CNN-based model for autism classification with **promising accuracy**.  
 
-**Dense Layers**: Fully connected layers with ReLU activation.
-
-**Output Layer**: A single neuron with sigmoid activation for binary classification.
-
-**Training and Evaluation**
-
-The model is trained using Adam optimizer with binary cross-entropy loss.
-
-ReduceLROnPlateau is used to adjust the learning rate dynamically.
-
-Training and validation accuracy/loss are plotted for better visualization.
-
-**Key Metrics**
-
-The model evaluates performance using:
-
-Accuracy
-
-Precision
-
-Recall (Sensitivity)
-
-Specificity
-
-F1-Score
-
-Confusion Matrix
-
-**Conclusion**
-
-This project successfully implements a CNN-based model for autism classification with promising accuracy. Future improvements can include data augmentation, hyperparameter tuning, and transfer learning to enhance performance.
+**Future Improvements:**  
+- Data augmentation  
+- Hyperparameter tuning  
+- Transfer learning  
